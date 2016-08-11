@@ -1,0 +1,41 @@
+{%extends "bases/customer.html" %}
+{%block customer%}
+<div class="panel panel-default">
+    <div class="panel-heading " style="text-align: center">
+        <text style="font-size: large">Shire Bank Admin Users</text>
+        <button class="btn-group btn-group-lg , pull-right" href="/">
+            <a href="/list">Back to Customers</a>
+        </button>
+    </div>
+    <div class="panel-body">
+
+        <table class="table">
+            <thead style="background-color: silver ; font-size: medium ">
+            <td>Admin Id</td>
+            <td>Admin Name</td>
+            <td>Admin Email</td>
+            <td>Admin Branche</td>
+            <td>Admin Edit</td>
+            <td>Admin Delete</td>
+            </thead>
+            {%for admin in  Admins%}
+
+            <tr>
+                <td>{{admin.id}}</td>
+                <td>{{admin.name}}</td>
+                <td>{{admin.email}}</td>
+                <td>Bakaro</td>
+                <td><a href="/user/find/{{admin.id}}"><button class="btn-primary" > Edit Admin </button></a> </td>
+                <td>
+                    <form action="/delete/{{admin.id}}" method="post">
+                    <button class="btn-primary" > Delete Admin</button>
+                    </form>
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+
+</div>
+</div>
+{%endblock%}

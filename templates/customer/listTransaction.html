@@ -1,0 +1,41 @@
+{%extends "bases/customer.html" %}
+{%block customer%}
+<div class="panel panel-default">
+    <div class="panel-heading " style="text-align: center">
+        <text style="font-size: large">Shire Bank Transaction History</text>
+        <button class="btn-group btn-group-lg, pull-right">
+           <a href="/list">Customer Lists</a>
+        </button>
+    </div>
+    <div class="panel-body">
+    <div>
+    </div>
+        <table class="table">
+            <thead style="color: #00b3ee ; font-size: medium ">
+            <td>TransactionId</td>
+            <td>Customer Account</td>
+            <td>Credit</td>
+            <td>Debit</td>
+            <td>Branch Name</td>
+            <td>Delete transaction</td>
+            </thead>
+            {%for transaction  in  transactions%}
+
+            <tr>
+                <td>{{transaction.id}}</td>
+                <td>{{transaction.accNo}}</td>
+                <td>${{transaction.credit}}</td>
+                <td>{{transaction.debit}}</td>
+                <td>{{transaction.branchName}}</td>
+                <td><form action="/transaction/delete/{{transaction.id}}" method="post">
+                    <button class="btn-primary" > Delete transaction</button></form>
+                </td>
+
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+
+</div>
+</div>
+{%endblock%}

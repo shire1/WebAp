@@ -1,0 +1,29 @@
+{%extends "bases/transactions.html"%}
+
+{%block transaction%}
+<form action="/transaction" method="post">
+        <div class="form-group">
+            <label >Customer Account</label>
+            <input type="text" class="form-control" name = "accNo"  value="{{customers.accNo}}">
+            <label >Customer Name</label>
+            <input type="text" class="form-control"  value="{{customers.name}}">
+
+        </div>
+        <div style="flex-wrap: wrap">
+            <label >Debit Amount</label>
+            <input type="text" class="form-control" name = "debit"  placeholder="Debit">
+            <label >Credit Amount</label>
+            <input type="text" class="form-control" name = "credit" placeholder="Credit">
+            <label >Branch Name</label>
+            <select class="selectpicker , form-control" name="branchName">
+                {% for branch in branches%}
+                <option value='{{branch.branchName}}'>
+                    {{branch.branchName}}
+                </option>
+                {%endfor%}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+{%endblock%}

@@ -1,0 +1,53 @@
+{%extends "bases/customer.html" %}
+{%block customer%}
+<div class="panel panel-default">
+    <div class="panel-heading " style="text-align: center">
+        <text style="font-size: large">Shire Bank Customers</text>
+        <button class="btn-group btn-group-lg , pull-right" href="/">
+            <a href="/">Back to Home</a>
+        </button>
+    </div>
+    <div class="panel-body">
+
+        <table class="table">
+           <thead style="color: #00b3ee ; font-size: medium ">
+           <td>Acc.Number</td>
+           <td>Customer Name</td>
+           <td>Address</td>
+           <td>Balance</td>
+           <td>Make transaction</td>
+           <td>View transactions</td>
+           <td>Delete customer</td>
+           <td>Update customer</td>
+           </thead>
+            {%for customer in  customers%}
+            <tr>
+                <td>{{customer.accNo}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.address}}</td>
+                <td>${{customer.money.balance}}</td>
+                <td><a href="/transaction/{{customer.id}}">
+                    <button class="btn-primary" >
+                    Make a transaction
+                    </button></a> </td>
+                <td><a href="/transaction/user/{{customer.accNo}}">
+                    <button class="btn-primary" >
+                        View transactions
+                    </button></a> </td>
+                <td><a href="/customer/delete/{{customer.accNo}}">
+                    <button class="btn-primary" > Delete customer
+                    </button></a>
+                </td>
+                <td><form action="/customer/{{customer.id}}" method="get">
+                    <button class="btn-primary" > Update customer
+                    </button></form>
+                </td>
+
+            </tr>
+            {%endfor%}
+        </table>
+        </div>
+
+    </div>
+</div>
+{%endblock%}

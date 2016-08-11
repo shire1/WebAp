@@ -1,0 +1,19 @@
+{%extends "bases/branch.html"%}
+
+{%block branches%}
+
+<h1> Edit Branch information </h1>
+<form action="/branch/update/{{customer.id}}" method="post">
+        <div class="form-group">
+            <label >Branch Name</label>
+            <input type="text" class="form-control" name = "branchName" value="{{branch.branchName}}">
+        </div>
+        <div class="form-group">
+            <label >Branch Admin</label>
+            <input type="text" class="form-control" name = "adminName" value="{{branch.adminName}}"  >
+        </div>
+        <button type="submit" class="btn btn-default">Update</button>
+    </form>
+
+
+{%endblock%}

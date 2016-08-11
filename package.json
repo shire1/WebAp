@@ -1,0 +1,40 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Bank system Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shireAli/Web.git"
+  },
+  "keywords": [
+    "shire"
+  ],
+  "author": "Shire Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shireAli/Web/issues"
+  },
+  "homepage": "https://github.com/shireAli/Web#readme",
+  "dependencies": {
+    " ": "^2.74.0",
+    "async": "^2.0.1",
+    "async-parallel": "^1.0.2",
+    "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "express": "^4.14.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.14.0",
+    "nunjucks": "^2.4.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "bower-main": "^0.2.14",
+    "gulp": "^3.9.1",
+    "gulp-clean-dest": "^0.1.1",
+    "gulp-concat": "^2.6.0"
+  }
+}

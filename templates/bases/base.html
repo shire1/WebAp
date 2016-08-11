@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shire Bank </title>
+
+</head>
+<link  href = "/public/css/main.css" rel="stylesheet">
+
+{%block styles%}
+
+{%endblock%}
+
+<body>
+{%if messages.error %}
+<div class="alert alert-warning">
+    {{messages.error}}
+</div>
+{%endif%}
+{%block body%} {%endblock%}
+
+{%block scripts%} {%endblock%}
+<script type="text/javascript" src="/public/scripts/jquery.js"></script>
+<script type="text/javascript" src="/public/scripts/bootstrap.js"></script>
+</body>
+</html>
