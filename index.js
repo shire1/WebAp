@@ -221,6 +221,7 @@ app.get("/list" , function(req , res){
         json:true
     },function(err , response , body){
         if (body.status == "Success"){
+
             res.render("customer/list.html" , {
                 customers:body.body
             })

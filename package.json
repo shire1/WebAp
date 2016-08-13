@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/shireAli/Web#readme",
   "dependencies": {
+    "request ": "^2.74.0",
     "async": "^2.0.1",
     "async-parallel": "^1.0.2",
     "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
     "express": "^4.14.0",
     "express-flash": "0.0.2",
     "express-session": "^1.14.0",
